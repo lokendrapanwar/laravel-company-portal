@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreOvertimeRequest;
-use App\Http\Requests\UpdateOvertimeRequest;
-use App\Models\Overtime;
+use App\Http\Requests\StoreAssetRequest;
+use App\Http\Requests\UpdateAssetRequest;
+use App\Models\Asset;
 
-class OvertimeController extends Controller
+class AssetController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class OvertimeController extends Controller
      */
     public function index()
     {
-        return view('overtimes.index');
+        //
     }
 
     /**
@@ -31,10 +31,10 @@ class OvertimeController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreOvertimeRequest  $request
+     * @param  \App\Http\Requests\StoreAssetRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreOvertimeRequest $request)
+    public function store(StoreAssetRequest $request)
     {
         //
     }
@@ -42,10 +42,10 @@ class OvertimeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Overtime  $overtime
+     * @param  \App\Models\Asset  $asset
      * @return \Illuminate\Http\Response
      */
-    public function show(Overtime $overtime)
+    public function show(Asset $asset)
     {
         //
     }
@@ -53,10 +53,10 @@ class OvertimeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Overtime  $overtime
+     * @param  \App\Models\Asset  $asset
      * @return \Illuminate\Http\Response
      */
-    public function edit(Overtime $overtime)
+    public function edit(Asset $asset)
     {
         //
     }
@@ -64,11 +64,11 @@ class OvertimeController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateOvertimeRequest  $request
-     * @param  \App\Models\Overtime  $overtime
+     * @param  \App\Http\Requests\UpdateAssetRequest  $request
+     * @param  \App\Models\Asset  $asset
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateOvertimeRequest $request, Overtime $overtime)
+    public function update(UpdateAssetRequest $request, Asset $asset)
     {
         //
     }
@@ -76,10 +76,10 @@ class OvertimeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Overtime  $overtime
+     * @param  \App\Models\Asset  $asset
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Overtime $overtime)
+    public function destroy(Asset $asset)
     {
         //
     }

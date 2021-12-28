@@ -3,9 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Auth;
 
-class StoreTaskRequest extends FormRequest
+class StoreAssetRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -14,7 +13,7 @@ class StoreTaskRequest extends FormRequest
      */
     public function authorize()
     {
-        return Auth::check(); // <------------------
+        return false;
     }
 
     /**

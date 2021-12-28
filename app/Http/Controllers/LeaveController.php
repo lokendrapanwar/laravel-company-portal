@@ -4,10 +4,19 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreLeaveRequest;
 use App\Http\Requests\UpdateLeaveRequest;
+use App\Repository\Eloquent\LeaveRepository;
 use App\Models\Leave;
 
 class LeaveController extends Controller
 {
+
+    private $leaveRepository;
+
+    public function __construct(LeaveRepository $leaveRepository)
+    {
+        $this->leaveRepository = $leaveRepository;
+    }
+ 
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +24,9 @@ class LeaveController extends Controller
      */
     public function index()
     {
-        //
+        $leaves = $this->leaveRepository->all();
+
+        return view('leaves.index', compact('leaves'));
     }
 
     /**
@@ -25,7 +36,7 @@ class LeaveController extends Controller
      */
     public function create()
     {
-        //
+        return view('leaves.create');
     }
 
     /**
@@ -36,7 +47,9 @@ class LeaveController extends Controller
      */
     public function store(StoreLeaveRequest $request)
     {
-        //
+        
+        $leaves = $this->leaveRepository->create($request->except('_method', '_token'))->all();
+        return redirect('leaves');
     }
 
     /**
